@@ -1,0 +1,25 @@
+{% extends 'Entregable/Padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+
+    {% if juegos %}
+    <h2>Estamos buscando los datos juegos de genero: {{genero}} </h2>
+    <ul>
+        {% for juego in juegos %}
+            <li>{{juego.nombre}}</li>
+            <li>{{juego.genero}}</li>
+            <li>{{juego.fechaDeLanzamiento}}</li>
+            <li>{{juego.plataforma}}</li>
+        {% endfor %}
+    </ul>
+
+    {% else %}
+    <p>No hay datos con esa descripción.</p>
+    {% endif %}
+
+    <p style="color: red;"> {{respuesta}} </p>
+
+{% endblock contenidoQueCambia %}

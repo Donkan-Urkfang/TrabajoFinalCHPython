@@ -1,0 +1,25 @@
+{% extends 'Entregable/Padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+    
+<h1>Creacion de juegos</h1>
+<p>Ingresa la fecha en formato MM/DD/AAAA</p>
+    
+{% if form.errors %}
+    <p>Los datos ingresados son incorrectos</p>
+{% endif %}
+        
+
+<form class="FormJuego" action="/Entregable/creaJuego/" method="POST">{% csrf_token %}
+
+    {{form.as_table}}
+
+    <input type="submit" value="Crear">
+
+
+</form>
+
+{% endblock contenidoQueCambia %}

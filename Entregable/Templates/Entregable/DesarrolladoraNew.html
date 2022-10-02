@@ -1,0 +1,30 @@
+{% extends 'Entregable/Padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+
+<br>
+<h3>Crear nuevo desarrolladora</h3>
+<br>
+{% if form.errors %}
+    <p>Los datos ingresados son incorrectos</p>
+{% endif %}
+        
+
+<form class="FormDesarrolladora" action="/Entregable/crearDesarrolladora/" method="POST" enctype="multipart/form-data">{% csrf_token %}
+    
+    <table>
+    {{form.as_table}}
+    </table>
+    <br>
+    <input type="submit" value="Crear">
+</form>
+
+<br>
+</p>
+    <a style="text-decoration:none" href="{% url 'VistaDesarrolladora' %}" class="bt bi-backspace btn-lg"> Regresar </a> 
+</p>
+
+{% endblock contenidoQueCambia %}

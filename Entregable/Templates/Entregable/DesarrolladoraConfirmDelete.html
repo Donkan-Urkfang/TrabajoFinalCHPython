@@ -1,0 +1,20 @@
+{% extends 'Entregable/Padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+<br>
+
+<form method="post">{% csrf_token %}
+    <h4>¿Esta seguro de borrar el desarrolladora {{ object.nombre }} {{ object.apellido }} ?</h4>
+    <br>
+    <input type="submit" value="Confirmar" />
+</p>
+<a style="text-decoration:none" href="{% url 'VistaDesarrolladora' %}" class="bt bi-backspace btn-lg"> Regresar </a> 
+</p>
+
+
+</form>
+
+{% endblock contenidoQueCambia %}

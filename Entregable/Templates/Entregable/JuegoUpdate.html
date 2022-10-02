@@ -1,0 +1,25 @@
+{% extends 'Entregable/Padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+    
+<h3>Editar Juego</h3>
+<br>
+
+<form class="FormJuego" action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+    
+    <table>
+    {{form.as_p}}
+    </table>
+    <br>
+    <input type="submit" value="Actualizar">
+</form>
+
+<br>
+</p>
+    <a style="text-decoration:none" href="{% url 'VistaJuego' %}" class="bt bi-backspace btn-lg"> Regresar </a> 
+</p>
+
+{% endblock contenidoQueCambia %}

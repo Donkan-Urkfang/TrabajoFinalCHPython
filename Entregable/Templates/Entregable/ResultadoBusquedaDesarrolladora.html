@@ -1,0 +1,25 @@
+{% extends 'Entregable/Padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+    
+    {% if desarrolladoras %}
+    <h2>Resultado de la busqueda - Desarrolladora del Pais: {{pais}}</h2>
+    <ul>
+        {% for desarrolladora in desarrolladoras %}
+            <li>{{desarrolladora.nombre}}
+                {{desarrolladora.pais}}
+                {{desarrolladora.ciudad}}
+            </li>
+        {% endfor %}
+    </ul>
+    
+    {% else %}
+    <p>No hay datos con esa descripción.</p>
+    {% endif %}
+
+    <p style="color: red;"> {{respuesta}} </p>
+
+{% endblock contenidoQueCambia %}

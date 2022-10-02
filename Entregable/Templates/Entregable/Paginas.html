@@ -1,0 +1,39 @@
+{% extends 'Entregable/Padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+    <h1>Paginas</h1>
+
+
+    <ul class="ulPaginas">
+        
+        {% for table in tables %}
+            
+            {% if "Entregable" in table %}
+                
+                {% if "avatar" not in table %}
+
+                    {% if "juego" in table %}
+
+                        <a href="{% url 'VistaJuego' %}"><li class="listadoPagina">Juegos</li></a>
+                        <p>Pagina con informacion de los juegos de la institución.</p>
+                    
+                    {% elif 'desarrolladora' in table%}
+                    
+                        <a href="{% url 'VistaDesarrolladora' %}"><li class="listadoPagina">Desarrolladoras</li></a>
+                        <p>Pagina con informacion de los desarrolladoras de la institución.</p>
+
+                    {% endif %}
+                    
+                {% endif %}
+                
+            {% endif %}
+                
+        {% endfor %}
+                        
+    </ul>
+
+
+{% endblock contenidoQueCambia %}

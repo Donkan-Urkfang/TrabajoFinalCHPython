@@ -1,0 +1,20 @@
+{% extends 'Entregable/Padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+<br>
+
+<form method="post">{% csrf_token %}
+    <h4>¿Esta seguro de borrar al juego {{ object.nombre }} ?</h4>
+    <br>
+    <input type="submit" value="Confirmar" />
+</p>
+<a style="text-decoration:none" href="{% url 'VistaJuego' %}" class="bt bi-backspace btn-lg"> Regresar </a> 
+</p>
+
+
+</form>
+
+{% endblock contenidoQueCambia %}

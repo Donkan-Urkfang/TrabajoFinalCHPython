@@ -1,0 +1,30 @@
+{% extends 'Entregable/Padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+    
+<h3>Detalle del desarrolladora</h3>
+<br>
+
+<FONT SIZE=3>
+<dl>
+    <dt>Nombre</dt>
+    <dd>{{desarrolladora.nombre}}</dd>
+    <dt>Pais</dt>
+    <dd>{{desarrolladora.pais}}</dd>
+    <dt>Ciudad</dt>
+    <dd>{{desarrolladora.ciudad}}</dd>
+    <dt>Contacto</dt>
+    <dd>{{desarrolladora.contacto}}</dd>
+  </dl>
+</font>
+
+
+<br>
+</p>
+    <a style="text-decoration:none" href="{% url 'VistaDesarrolladora' %}" class="bt bi-backspace btn-lg"> Regresar </a> 
+</p>
+
+{% endblock contenidoQueCambia %}

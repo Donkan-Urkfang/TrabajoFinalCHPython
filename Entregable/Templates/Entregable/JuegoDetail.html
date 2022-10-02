@@ -1,0 +1,29 @@
+{% extends 'Entregable/Padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+    
+<h3>Detalle del Juego</h3>
+<br>
+
+<FONT SIZE=3>
+  <dl>
+    <dt>Nombre</dt>
+    <dd>{{object.nombre}}</dd>
+    <dt>Genero</dt>
+    <dd>{{object.genero}}</dd>
+    <dt>Fecha de Lanzamiento</dt>
+    <dd>{{object.fechaDeLanzamiento}}</dd>
+    <dt>Plataforma</dt>
+    <dd>{{object.plataforma}}</dd>
+  </dl>
+</font>
+
+<br>
+</p>
+    <a style="text-decoration:none" href="{% url 'VistaJuego' %}" class="bt bi-backspace btn-lg"> Regresar </a> 
+</p>
+
+{% endblock contenidoQueCambia %}

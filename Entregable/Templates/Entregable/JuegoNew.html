@@ -1,0 +1,32 @@
+{% extends 'Entregable/Padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+
+<br>
+<h1>Creacion de juegos</h1>
+<br>
+<p>Ingresa la fecha en formato AAAA-MM-DD</p>
+<br>
+{% if form.errors %}
+    <p>Los datos ingresados son incorrectos</p>
+{% endif %}
+        
+
+<form class="FormJuego" action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+    
+    <table>
+    {{form.as_table}}
+    </table>
+    <br>
+    <input type="submit" value="Crear">
+</form>
+
+<br>
+</p>
+    <a style="text-decoration:none" href="{% url 'VistaJuego' %}" class="bt bi-backspace btn-lg"> Regresar </a> 
+</p>
+
+{% endblock contenidoQueCambia %}

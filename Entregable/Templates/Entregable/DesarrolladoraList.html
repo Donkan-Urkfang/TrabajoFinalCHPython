@@ -1,0 +1,43 @@
+{% extends 'Entregable/Padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+<br>
+
+    <button class="botoncreacion"><a class="link" href="{% url 'NewDesarrolladora' %}">Agregar nuevo Desarrolladora</a></button><br>    
+
+
+<h1>Listado de desarrolladoras</h1>
+<br>
+
+<ul>
+    
+    {% for desarrolladora in object_list %}
+        
+        <li class="list-item-own">
+            <p>Desarrolladora: {{desarrolladora.nombre}} </p>
+            {% if desarrolladora.imagen %}
+                <img height= '150px' src='/media/{{desarrolladora.imagen}}'>
+            {% endif %}
+            <div>
+                <a href="{% url 'DetailDesarrolladora' desarrolladora.id %}">Leer mas...</a>
+                {% if request.user.is_superuser %}                
+                    <a href="{% url 'EditDesarrolladora' desarrolladora.id %}">Editar</a>
+                    <a href="{% url 'DeleteDesarrolladora' desarrolladora.id %}">Borrar</a>
+                {% endif %}
+            </div>
+        </li>
+
+    {% endfor %}
+        
+</ul>
+
+<p>Autor: admin</p>
+<p>Fecha: 02/10/2022</p>
+
+<p><a style="text-decoration: none" href="{% url 'paginas'  %}" class="bt bi-backspace"> Regresar a la pagina anterior</a></p>
+
+
+{% endblock contenidoQueCambia %}

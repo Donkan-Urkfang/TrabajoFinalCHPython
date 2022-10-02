@@ -1,0 +1,28 @@
+{% extends 'Entregable/Padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+
+
+{% if not request.user.is_authenticated %}
+<div class='text-center'>
+    <h3>Bienvenido</h3>
+</div>
+{% endif %}
+
+
+{% if request.user.is_authenticated %}
+        
+    <div class='text-center'>
+        
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        
+            <h3>Que bueno verte {{user.username}} </h3>
+    </div>
+            
+{% endif %}
+    
+
+{% endblock contenidoQueCambia %}
